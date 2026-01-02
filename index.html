@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Order Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Company Order Management System</h1>
+
+<!-- LOGIN -->
+<div id="loginBox" class="card">
+    <h2>Login</h2>
+
+    <select id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- USER DASHBOARD -->
+<div id="userBox" class="card hidden">
+    <h2>User Dashboard</h2>
+
+    <input id="name" placeholder="Name">
+    <input id="phone" placeholder="Phone Number">
+    <input id="email" placeholder="Email ID">
+
+    <h3>Place Order</h3>
+
+    <select id="product">
+        <option value="Laptop" data-price="50000">Laptop - ₹50,000</option>
+        <option value="Mobile" data-price="20000">Mobile - ₹20,000</option>
+        <option value="Tablet" data-price="30000">Tablet - ₹30,000</option>
+        <option value="Headphones" data-price="5000">Headphones - ₹5,000</option>
+    </select>
+
+    <select id="quantity">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+
+    <button onclick="placeOrder()">Place Order</button>
+
+    <h3>Your Orders</h3>
+    <div id="userOrders"></div>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminBox" class="card hidden">
+    <h2>Admin Dashboard</h2>
+
+    <h3>Order Status Chart</h3>
+    <canvas id="statusChart" width="300" height="200"></canvas>
+
+    <h3>Orders</h3>
+    <div id="adminOrders"></div>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
